@@ -24,7 +24,7 @@ def playVideos():
         return
     random.shuffle(videos)
     for video in videos:
-        playProcess = Popen(['vlc', '--no-window-deco', '--fullscreen', video])
+        playProcess = Popen(['vlc', '--no-video-deco', '--fullscreen', video])
         playProcess.wait()
 
 
