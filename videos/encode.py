@@ -29,6 +29,6 @@ for filepath in newFiles:
 	o = os.path.join(destinationDirectory, newFile)
 	if os.path.isfile(o):
 		continue
-	encodeCommand = 'ffmpeg -i "%s" -vf scale=-2:480 -c:v libx264 -profile:v baseline -level 3.0 -preset fast -crf 23 -pix_fmt yuv420p "%s"' % (i, o)
+	encodeCommand = 'ffmpeg -i "%s" -vf scale=-2:480 -c:v hevc_amf -profile:v main -level 3.0 -preset fast -qp_i 30 -qp_p 30 -pix_fmt yuv420p "%s"' % (i, o)
 	print('Encoding %s' % newFile)
 	encode = os.popen(encodeCommand).read()
